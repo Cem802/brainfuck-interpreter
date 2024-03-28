@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brainfuck</title>
+    <style>
+        html, body                  { height: 95%; }
+        body                        { margin: 0 auto; max-width: 800px; padding: 0 20px; }
+        
+        .output-container           { height: 27%; border: 2px solid #aeaeae; background-color: #aeaeae;
+                                      border-radius: 5px; padding: 10px; margin: 10px 0; overflow: scroll;
+                                    }
+        .output-container textarea  { width: 98%; height: 75%; resize: none; }
+        textarea:invalid            { background-color: #ffafaf; }
+        .output-container button    { width: 98%; height: 10%; }
+        .output-container div       { width: 98%; height: 10%; background-color: #dd6c6c; border-color: #6e0000; }
+        
+        .edit-container             { height: 65%; border: 2px solid #1a0026; background-color: #470065; border-radius: 5px; padding: 10px; margin: 10px 0; }
+        .edit-container textarea    { width: 98%; height: 96%; resize: none; }
+        .edit-container div         { width:  7%; height: 1em; color: white;   
+                                      position: relative; float: right;
+                                    }
+        </style>
+</head>
+    <h3>Brainfuck Interpreter</h3>
+
+    <div class="edit-container" id="edit">
+        <textarea id="code" name="code" autofocus>++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
+        </textarea>
+        <div id="pos"></div>
+    </div>
+
+    <div class="output-container">
+        <button id="run">Run</button>
+        <div id="error" hidden></div>
+        <textarea id="output" readonly></textarea>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
